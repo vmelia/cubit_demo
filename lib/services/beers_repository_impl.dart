@@ -1,16 +1,18 @@
 import 'dart:convert';
-import 'package:http/http.dart' as http;
-import '../contracts.dart';
+
+import '../contracts/externals.dart';
+import '../contracts/services.dart';
 import '../model.dart';
 
 class BeersRepositoryImpl implements BeersRepository {
-  final _baseUrl = 'www.drifta.co.uk';
   final _endpoint = '/api/Beers';
+
+  final HttpProvider httpProvider;
+  BeersRepositoryImpl(this.httpProvider);
 
   @override
   Future<List<BeerEntity>> get() async {
-    final url = Uri.https(_baseUrl, _endpoint);
-    var response = await http.get(url);
+    var response = await httpProvider.get(_endpoint);
     if (response.statusCode != 200) {
       return [];
     }

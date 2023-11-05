@@ -27,13 +27,12 @@ class _HomePageView extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    //final beersCubit = GetIt.I<BeersCubit>();
     return SafeArea(
       child: Scaffold(
         body: Column(
           crossAxisAlignment: CrossAxisAlignment.stretch,
           children: [
-            const Text('Beers'),
+            //const Text('Beers'),
             Expanded(
               child: ListView.builder(
                 itemCount: beers.length,

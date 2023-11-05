@@ -1,14 +1,15 @@
 import 'package:cubit_demo/pages/home_page.dart';
 import 'package:flutter/material.dart';
 import 'package:get_it/get_it.dart';
-
 import 'contracts.dart';
+import 'externals.dart';
 import 'services.dart';
 import 'states.dart';
 
 void main() {
-  GetIt.I.registerSingleton<BeersRepository>(BeersRepositoryImpl());
-  GetIt.I.registerSingleton<BeersCubit>(BeersCubit(GetIt.I<BeersRepository>()));
+  GetIt.I.registerSingleton<HttpProvider>(HttpProviderImpl());
+  GetIt.I.registerSingleton<BeersRepository>(BeersRepositoryImpl(GetIt.I()));
+  GetIt.I.registerSingleton<BeersCubit>(BeersCubit(GetIt.I()));
 
   runApp(const MyApp());
 }

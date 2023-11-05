@@ -1,6 +1,6 @@
 import 'package:bloc/bloc.dart';
 import 'package:equatable/equatable.dart';
-import '../contracts.dart';
+import '../contracts/services.dart';
 import '../model.dart';
 
 class BeersState extends Equatable {

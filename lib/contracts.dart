@@ -1,1 +1,2 @@
-export 'contracts/beers_repository.dart';
+export 'contracts/externals/http_provider.dart';
+export 'contracts/services/beers_repository.dart';
